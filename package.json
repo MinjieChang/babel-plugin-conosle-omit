@@ -10,6 +10,10 @@
     "prepublish": "npm run build"
   },
   "keywords": ["babel-plugin", "console", "remove"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MinjieChang/babel-plugin-conosle-remove.git"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
