@@ -126,11 +126,3 @@ npm i -D babel-plugin-console-omit
   }]
 }
 ```
-
-## 原理解析
-
-实现原理可以查看[博客地址](https://github.com/MinjieChang/myBlog/issues/36)
-
-## babel 插件解析
-
-[如何实现一个bable插件](https://github.com/MinjieChang/myBlog/issues/35)
