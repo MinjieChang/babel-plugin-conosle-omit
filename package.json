@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-console-remove",
+  "name": "babel-plugin-console-omit",
   "version": "1.0.0",
   "description": "remove console calling expression in production mode",
   "main": "lib/index.js",
