@@ -1,4 +1,4 @@
-# babel-plugin-console
+# babel-plugin-console-omit
 
 ## 介绍
 
@@ -94,28 +94,21 @@ function code(x) {
 
 ## 使用
 
-### babel-cli
+安装
+
+```shell
+npm i -D babel-plugin-console-omit
+```
+### .babelrc
 
 .babelrc 文件中添加
 
 ```js
 {
   "plugins": [
-    ["./plugins/2babel-plugin-console/index.js", { "removeMethods": null }],
+    ["babel-plugin-console-omit"],
   ]
 }
-```
-### babel api
-
-```js
-const babel = require("babel-core");
-const consolePlugin = require("../plugins/2babel-plugin-console/index")
-
-const result = babel.transform(code, {
-  plugins: [[consolePlugin, {removeMethods: null}]]
-});
-
-console.log(result.code, 'result');
 ```
 
 ### webpack.config.js
@@ -127,7 +120,7 @@ console.log(result.code, 'result');
     'test': /\.js$/,
     'exclude': /node_modules/,
     'query': {
-      'plugins': ['console'],
+      'plugins': ['console-omit'],
       'presets': [['@babel/env', { 'targets': { 'node': 6 } }]]
     }
   }]
