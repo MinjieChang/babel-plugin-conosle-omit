@@ -1,0 +1,21 @@
+{
+  "name": "babel-plugin-console-remove",
+  "version": "1.0.0",
+  "description": "remove console calling expression in production mode",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "NODE_ENV='production' babel-node ./test/console.js",
+    "babel": "babel ./test/console.js",
+    "build": "babel src --out-dir lib",
+    "prepublish": "npm run build"
+  },
+  "keywords": ["babel-plugin", "console", "remove"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {}
+}
