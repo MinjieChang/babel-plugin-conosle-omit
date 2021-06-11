@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-console-omit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "remove console calling expression in production mode",
   "main": "lib/index.js",
   "scripts": {
@@ -9,11 +9,11 @@
     "build": "babel src --out-dir lib",
     "prepublish": "npm run build"
   },
-  "keywords": ["babel-plugin", "console", "remove"],
+  "keywords": ["babel-plugin", "console", "remove", "omit"],
   "files": ["lib", "src"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/MinjieChang/babel-plugin-conosle-remove.git"
+    "url": "https://github.com/MinjieChang/babel-plugin-conosle-omit"
   },
   "author": "",
   "license": "ISC",

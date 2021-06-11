@@ -1,10 +1,10 @@
 # babel-plugin-console-omit
 
-## 介绍
+## introduction
 
-实现的一个在生产环境下移除 `console`语句的 `babel`插件
+a babel plugin that would remove `console` call exprssion in production mode
 
-它可以将如下代码：
+this primitive code with console:
 
 ```js
 let a = b => {
@@ -22,7 +22,7 @@ function code(x) {
 };
 ```
 
-转换成这样：
+the transformed code like this：
 
 ```js
 let a = b => {};
@@ -35,15 +35,17 @@ function code(x) {
 };
 ```
 
-当然，如果你想保留某些 `console`语句，可以加上约定的注释：
+of couse, You can add the following agreed comments if you would like to reserve some `console`
+
+1. reserve
+2. no remove
+3. not remove
 
 ```js
-// 使用 babel-cli 配合 .babelrc 编译
-
 let a = b => {
   /*
   * no remove
-  * lkkkkkkk
+  * other comment
   */
   console.log(b)
 };
@@ -51,9 +53,9 @@ let fn = c => { console.log(c)}
 function code(x) {
   console.log(x) // reserve
   if (true) {
-    // 哈哈发寒风
+    // some comment
     console.log(x) // no remove
-    // hhhhhhh
+    // some comment
     console.log(x)
   }
   // ggggg
@@ -65,13 +67,13 @@ function code(x) {
 };
 ```
 
-当你在代码的 **前面**或**尾部**加上 **reserve** 或者 **no remove**注释的时候，`console`语句不会被删除，上面代码转换后结果如下：
+the transformed code with some different comments
 
 ```js
 let a = b => {
   /*
   * no remove
-  * lkkkkkkk
+  * other comment
   */
   console.log(b);
 };
@@ -79,9 +81,9 @@ let fn = c => {};
 function code(x) {
   console.log(x); // reserve
   if (true) {
-    // 哈哈发寒风
+    // some comment
     console.log(x); // no remove
-    // hhhhhhh
+    // some comment
   }
   // ggggg
 
@@ -91,17 +93,18 @@ function code(x) {
   return x * x;
 };
 ```
+so you can see, The `console` statement will not be deleted with reserved comment. Instead, only with other comments will be deleted
 
-## 使用
+## usage
 
-安装
+install this plugin
 
 ```shell
 npm i -D babel-plugin-console-omit
 ```
-### .babelrc
+### used in .babelrc
 
-.babelrc 文件中添加
+add the plugin to `.babelrc` file
 
 ```js
 {
@@ -111,7 +114,7 @@ npm i -D babel-plugin-console-omit
 }
 ```
 
-### webpack.config.js
+### used in webpack.config.js
 
 ```js
 'module': {

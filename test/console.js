@@ -8,7 +8,7 @@ const code =`
 let a = b => {
   /*
   * no remove
-  * lkkkkkkk
+  * other comment
   */
   console.log(b)
 };
@@ -16,9 +16,9 @@ let fn = c => { console.log(c)}
 function code(x) {
   console.log(x) // reserve
   if (true) {
-    // 哈哈发寒风
+    // some comment
     console.log(x) // no remove
-    // hhhhhhh
+    // some comment
     console.log(x)
   }
   // ggggg
